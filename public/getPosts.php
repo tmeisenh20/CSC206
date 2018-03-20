@@ -22,8 +22,6 @@ $posts = $db->query($sql);
 
 // Run a simple query that will be rendered in column 2 below
 
-$sql = 'select id, name, description from stories';
-
 $res = $db->query($sql);
 
 // Generate the HTML for the top of the page

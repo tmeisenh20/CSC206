@@ -42,6 +42,7 @@ class mainHeaderTemplate extends templateEngine
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
                  <a class="btn btn-outline-primary" href="createPost.php">Create Post</a>
+                 <a class="btn btn-outline-primary" href="getPosts.php">All Posts</a>
             </div>
             <div class="col-4 text-center">
                 <a class="blog-header-logo text-dark" href="index.php">What's Going On?</a>
@@ -49,10 +50,9 @@ class mainHeaderTemplate extends templateEngine
             <div class="col-4 d-flex justify-content-end align-items-center">
                 <a class="text-muted" href="#">
                     <nav class="blog-pagination">
-                <a class="text-muted" href="#">Login</a>
             </nav>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                <a class="btn btn-outline-primary" href="#">Login</a>
             </div>
         </div>
     </header>

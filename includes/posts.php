@@ -127,7 +127,7 @@ class Stories
     public function delete($id)
     {
 
-        $sql = 'update stories set isActive=0 where id = ' . $id . ';';
+        $sql = "delete from stories set where id =" . $_GET['id'];
 
         $result = $this->db->query($sql);
 
