@@ -23,7 +23,7 @@ class mainHeaderTemplate extends templateEngine
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="coffee.ico">
+    <link rel="icon" href="/assets/images/coffee.ico">
 
     <title>What's Going On?</title>
 
@@ -52,7 +52,7 @@ class mainHeaderTemplate extends templateEngine
                     <nav class="blog-pagination">
             </nav>
                 </a>
-                <a class="btn btn-outline-primary" href="#">Login</a>
+                <a class="btn btn-outline-primary" href="login.php">Login</a>
             </div>
         </div>
     </header>

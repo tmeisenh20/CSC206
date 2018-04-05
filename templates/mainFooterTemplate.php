@@ -8,7 +8,7 @@ class mainFooterTemplate extends templateEngine
 
         $temp = <<<HTML
 <footer class="blog-footer">
-    <p>Visit my Linkedin profile. <a href="https://www.linkedin.com/in/travis-eisenhauer/">Linkedin</a> CSC 206 2018 All Rights Reserved.</p>
+    <p>Visit my Linkedin profile. <a href="https://www.linkedin.com/in/travis-eisenhauer/">Linkedin</a> CSC 206 2018 &copy; All Rights Reserved.</p>
     <p>
         <a href="#">Back to top</a>
     </p>

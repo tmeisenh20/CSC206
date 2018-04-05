@@ -17,7 +17,6 @@ require_once(FS_INCLUDES . 'posts.php');
 
 $requestType = $_SERVER['REQUEST_METHOD'];
 
-//$id = $_GET['id'];
 $sql = "delete from stories where id=" . $_GET['id'];
 echo $sql;
 $result = $db->query($sql);

@@ -37,17 +37,11 @@ echo $header->renderStatic();
 
         if ($requestType == 'GET') {
 
-//
-
             $sql = 'select * from stories where id = ' . $_GET['id'];
 
             $result = $db->query($sql);
 
             $row = $result->fetch();
-
-            //News::story($row);
-
-            //showUpdateForm($row);
 
             $id = $row['id'];
 

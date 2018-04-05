@@ -1,8 +1,77 @@
 <?php
 
-    /* 	Start-up activities prior to loading the page content.  This will make a connection
-     *	to the database and start a session.
-     */
+class loginFeatures
+{
+
+    public static function LoggedIn()
+
+    {
+        $users = $_SESSION['user'];
+        $x = '
+
+        <div class="blog-masthead" >
+
+        <div class="container" >
+
+            <nav class="blog-nav" >
+
+               <a class="blog-header-logo text-dark" href="index.php">What\'s Going On?</a>
+
+                <a class="blog-nav-item" href = "createPost.php" >Create Post</a >
+
+                <a class="blog-nav-item" href = "getPosts.php" >All Posts</a >
+
+                <div class="blog-nav-item3">Hello, ' . $users['firstName'] . ' ' . $users['lastName'] .
+
+            '</div><a class="blog-nav-item2" href="logoff.php">Logout</a>
+            </nav >
+        </div >
+    </div >';
+        return $x;
+    }
+
+
+    public static function LoggedOut()
+
+    {
+        $x = '
+        <div class="blog-masthead" >
+
+        <div class="container" >
+
+            <nav class="blog-nav" >
+
+
+                <a class="blog-header-logo text-dark" href="index.php">What\'s Going On?</a>
+
+                <a class="btn btn-outline-primary" href="login.php">Login</a>
+
+            </nav >
+        </div >
+    </div >';
+        return $x;
+    }
+
+    public static function CheckLogin()
+
+    {
+        if (isset($_SESSION['user'])) {
+
+            $menu = static::LoggedIn();
+
+        } else {
+
+            $menu = static::LoggedOut();
+        }
+
+        echo <<<pageTop
+pageTop;
+    }
+
+
+}
+
+
     require_once($_SERVER['DOCUMENT_ROOT'] . '/../includes/application_includes.php');
 
     // Include the template files needed for the page
@@ -63,3 +132,5 @@ echo $content->data($data)->renderList();
     // Load page header
     $footer = new mainFooterTemplate();
     echo $footer->renderStatic();
+
+

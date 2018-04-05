@@ -21,22 +21,24 @@ $header = new mainHeaderTemplate();
 echo $header->renderStatic();
 
 
-if ($requestType == 'GET') {
 
-    // Show the Create Post Form
-    $form = new createPostTemplate();
-    echo $form->render();
+    if ($requestType == 'GET') {
 
-} else {
+        // Show the Create Post Form
+        $form = new createPostTemplate();
+        echo $form->render();
 
-    $formData = $_POST;
-    $formData['created_at'] = date('Y-m-d H:i:s', time());
+    } else {
 
-    $u = new Stories($db);
-    $r = $u->create($formData);
-    header('Location: http://csc206dev.com/index.php');
+        $formData = $_POST;
+        $formData['created_at'] = date('Y-m-d H:i:s', time());
 
-}
+        $u = new Stories($db);
+        $r = $u->create($formData);
+        header('Location: http://csc206dev.com/index.php');
+
+    }
+
 
 
 // Load page header

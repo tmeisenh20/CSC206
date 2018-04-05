@@ -31,8 +31,6 @@ echo $header->renderStatic();
 
 // Page content goes here
 
-// Create the table Header
-
 ?>
 
     <div class="top10">

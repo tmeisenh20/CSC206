@@ -12,6 +12,13 @@ class blogcontentcreator extends templateEngine
      */
     protected $whiteList = ['id', 'title', 'content', 'image'];
 
+
+   // public static function LoggedIn($id){
+    //    return $x = '
+    //    <a href="getPosts.php?id=\' . $id . \'">All Posts</a>
+     //   <a href="createPost.php?id=\' . $id . \'">Create Post</a></h4>\';';
+
+   // }
     public function __construct(){
 
         $temp = <<<HTML
