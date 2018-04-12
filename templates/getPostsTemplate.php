@@ -67,7 +67,7 @@ echo <<<story
 
     <td>$endDate</td>
 
-    <td><a href="viewPost.php?id=$id">View</a></h4></td>
+    <td><a href="updatePost.php?id=$id">Edit</a></h4></td>
 
 </tr>
 

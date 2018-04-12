@@ -71,7 +71,6 @@ echo $header->renderStatic();
         <th>$content</th>
         <th>$startDate</th>
         <th>$endDate</th>
-        <th><h4><a href="updatePost.php?id=$id">Edit Post</a></th>
         </tr>
         </table>
 

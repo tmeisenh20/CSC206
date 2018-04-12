@@ -6,15 +6,11 @@ require_once (FS_TEMPLATES . 'templateEngine.php');
 class mainHeaderTemplate extends templateEngine
 {
 
-    /**
-     * This is the html code that makes up the template.  This will
-     * be unique to and set in eacb instance of the class
-     *
-     * @var null
-     */
-
     public function __construct()
     {
+
+        $menu = self::CheckLogin();
+
         $temp = <<<HTML
         <!doctype html>
             <html lang="en">
@@ -40,20 +36,7 @@ class mainHeaderTemplate extends templateEngine
 <div class="container">
     <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
-            <div class="col-4 pt-1">
-                 <a class="btn btn-outline-primary" href="createPost.php">Create Post</a>
-                 <a class="btn btn-outline-primary" href="getPosts.php">All Posts</a>
-            </div>
-            <div class="col-4 text-center">
-                <a class="blog-header-logo text-dark" href="index.php">What's Going On?</a>
-            </div>
-            <div class="col-4 d-flex justify-content-end align-items-center">
-                <a class="text-muted" href="#">
-                    <nav class="blog-pagination">
-            </nav>
-                </a>
-                <a class="btn btn-outline-primary" href="login.php">Login</a>
-            </div>
+            {$menu}
         </div>
     </header>
 
@@ -67,6 +50,72 @@ class mainHeaderTemplate extends templateEngine
 HTML;
 
         $this->template = $temp;
+    }
+
+    public static function LoggedIn()
+
+    {
+        $users = $_SESSION['user'];
+        $x = '
+
+        <div class="blog-masthead" >
+
+        <div class="row flex-nowrap justify-content-between align-items-center">
+
+            <nav class="blog-nav" >
+
+               <a class="blog-header-logo text-dark" href="index.php">What\'s Going On?</a>
+
+                <a class="blog-nav-item" href = "createPost.php" >Create Post</a >
+
+                <a class="blog-nav-item" href = "getPosts.php" >All Posts</a >
+
+                <div class="blog-nav-item3">Hello, ' . $users['firstName'] . ' ' . $users['lastName'] .
+
+            '</div><a class="blog-nav-item2" href="logoff.php">Logout</a>
+            </nav >
+        </div >
+    </div >';
+        return $x;
+    }
+
+    public static function LoggedOut()
+
+    {
+        $x = '
+        <div class="blog-masthead" >
+
+        <div class="row flex-nowrap justify-content-between align-items-center">
+           <div class="col-8 text-center">
+                <a class="blog-header-logo text-dark" href="index.php">What\'s Going On?</a>
+           </div>
+           
+        <div class="col-4 d-flex justify-content-end align-items-center">
+                <a class="text-muted" href="#">
+                    <nav class="blog-pagination">
+            </nav>
+                </a>
+                <a class="btn btn-outline-primary" href="login.php">Login</a>
+            </div>
+            
+
+        </div >
+    </div >';
+        return $x;
+    }
+
+    public static function CheckLogin()
+
+    {
+        if (isset($_SESSION['user'])) {
+
+            return self::LoggedIn();
+
+        } else {
+
+            return self::LoggedOut();
+        }
+
 
     }
 }

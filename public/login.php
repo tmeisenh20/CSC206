@@ -27,7 +27,6 @@ if ($requestType == 'GET') {
     $input = $_POST;
 
 
-
     $sql = "select * from users where email = '" . $input['email'] . "'";
 
     $result = $db->query($sql);
@@ -36,7 +35,7 @@ if ($requestType == 'GET') {
 
         $users = $result->fetch();
 
-        if (password_verify($input['password'], $users['password'])) {
+        if ($input['password'] == $users['password']) {
 
             $_SESSION['user'] = $users;
 
