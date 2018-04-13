@@ -34,12 +34,25 @@ class mainHeaderTemplate extends templateEngine
 <body>
 
 <div class="container">
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.php">What's Going On?</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        {$menu}
+      </div>
+    </nav>
+
+<!--    
     <header class="blog-header py-3">
-        <div class="row flex-nowrap justify-content-between align-items-center">
+        <div class="row justify-content-between align-items-center">
             {$menu}
         </div>
     </header>
-
+-->
     <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div class="col-md-6 px-0">
             <h1 class="display-4 font-italic">Russia Displays Indestructible Warhead</h1>
@@ -57,25 +70,21 @@ HTML;
     {
         $users = $_SESSION['user'];
         $x = '
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="createPost.php">Create Post</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="getPosts.php">All Posts</a>
+          </li>
+        </ul>
+         Hello, ' . $users['firstName'] . ' ' . $users['lastName'] .
+            ' . <a class="btn btn-outline-primary" href="logoff.php">Logout</a>
 
-        <div class="blog-masthead" >
-
-        <div class="row flex-nowrap justify-content-between align-items-center">
-
-            <nav class="blog-nav" >
-
-               <a class="blog-header-logo text-dark" href="index.php">What\'s Going On?</a>
-
-                <a class="blog-nav-item" href = "createPost.php" >Create Post</a >
-
-                <a class="blog-nav-item" href = "getPosts.php" >All Posts</a >
-
-                <div class="blog-nav-item3">Hello, ' . $users['firstName'] . ' ' . $users['lastName'] .
-
-            '</div><a class="blog-nav-item2" href="logoff.php">Logout</a>
-            </nav >
-        </div >
-    </div >';
+    ';
         return $x;
     }
 
@@ -83,24 +92,8 @@ HTML;
 
     {
         $x = '
-        <div class="blog-masthead" >
-
-        <div class="row flex-nowrap justify-content-between align-items-center">
-           <div class="col-8 text-center">
-                <a class="blog-header-logo text-dark" href="index.php">What\'s Going On?</a>
-           </div>
-           
-        <div class="col-4 d-flex justify-content-end align-items-center">
-                <a class="text-muted" href="#">
-                    <nav class="blog-pagination">
-            </nav>
-                </a>
-                <a class="btn btn-outline-primary" href="login.php">Login</a>
-            </div>
-            
-
-        </div >
-    </div >';
+        
+        <a class="btn btn-outline-primary" href="login.php">Login</a>';
         return $x;
     }
 
