@@ -14,13 +14,12 @@ class mainCardTemplate extends templateEngine
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-primary">World</strong>
                     <h3 class="mb-0">
-                        <a class="text-dark" href="#">Featured post</a>
+                        <a class="text-dark" href="https://www.theguardian.com/world/2018/feb/12/safe-happy-and-free-does-finland-have-all-the-answers">Featured post</a>
                     </h3>
-                    <div class="mb-1 text-muted">Date of post</div>
+                    <div class="mb-1 text-muted">4/15/18</div>
                     <p class="card-text mb-auto">Safe, happy, and free: Does Finland have all the answers?</p>
-                    <a href="#">Continue reading</a>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="/assets/images/finland.jpg/200x250?theme=thumb">
+                <img class="card-img-right flex-auto d-none d-md-block" src="/assets/images/finland.jpg?theme=thumb" width="200" height="250" alt="Card image cap">
             </div>
         </div>
         <div class="col-md-6">
@@ -28,13 +27,12 @@ class mainCardTemplate extends templateEngine
                 <div class="card-body d-flex flex-column align-items-start">
                     <strong class="d-inline-block mb-2 text-success">Design</strong>
                     <h3 class="mb-0">
-                        <a class="text-dark" href="#">Featured Post</a>
+                        <a class="text-dark" href="http://www.vulture.com/2018/04/a-serious-critique-of-the-mcus-off-duty-fashion.html">Featured Post</a>
                     </h3>
-                    <div class="mb-1 text-muted">Date of post</div>
+                    <div class="mb-1 text-muted">3/16/18</div>
                     <p class="card-text mb-auto">Check out the latest in the fashion industry.</p>
-                    <a href="viewPost.php">Continue reading</a>
                 </div>
-                <img class="card-img-right flex-auto d-none d-md-block" data-src="/assets/images/design.jpg/200x250?theme=thumb">
+                <img class="card-img-right flex-auto d-none d-md-block" src="/assets/images/design.jpg?theme=thumb" width="200" height="250" alt="Card image cap">
             </div>
         </div>
     </div>

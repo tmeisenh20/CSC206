@@ -17,7 +17,6 @@
 
 ?>
         <div class="container" >
-        <!--Example row of columns-->
         <div class="row">
 
 <?php
@@ -51,13 +50,11 @@ echo $content->data($data)->renderList();
 ?>
         </div>
     </div>
-     <!-- /container -->
     </div>
         <hr>
     </div>
 
 <?php
-    // Load page header
     $footer = new mainFooterTemplate();
     echo $footer->renderStatic();
 

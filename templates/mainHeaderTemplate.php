@@ -46,18 +46,11 @@ class mainHeaderTemplate extends templateEngine
       </div>
     </nav>
 
-<!--    
-    <header class="blog-header py-3">
-        <div class="row justify-content-between align-items-center">
-            {$menu}
-        </div>
-    </header>
--->
     <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
         <div class="col-md-6 px-0">
             <h1 class="display-4 font-italic">Russia Displays Indestructible Warhead</h1>
             <p class="lead my-3">Putin reveals plans for a warhead design that can not be detected by U.S. anti-missile systems</p>
-            <p class="lead mb-0"><a href="viewPost.php" class="text-white font-weight-bold">Continue reading...</a></p>
+            <p class="lead mb-0"><a href="/viewPost.php?id=9" class="text-white font-weight-bold">Continue reading...</a></p>
         </div>
     </div>
 HTML;
@@ -66,7 +59,6 @@ HTML;
     }
 
     public static function LoggedIn()
-
     {
         $users = $_SESSION['user'];
         $x = '
@@ -98,7 +90,6 @@ HTML;
     }
 
     public static function CheckLogin()
-
     {
         if (isset($_SESSION['user'])) {
 
@@ -108,7 +99,5 @@ HTML;
 
             return self::LoggedOut();
         }
-
-
     }
 }
